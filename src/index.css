@@ -13,7 +13,7 @@
 
   --neutral-Dark-brown: hsl(25, 47%, 15%);
   --neutral-Medium-brown: hsl(28, 10%, 53%);
-  --neutral-Cream: -hsl(27, 66%, 92%);
+  --neutral-Cream: hsl(27, 66%, 92%);
   --neutral-Very-pale-orange: hsl(33, 100%, 98%);
 }
 
@@ -22,4 +22,7 @@ html {
   font-size: 62.5%;
   font-family: 'DM Sans', sans-serif;
   background-color: var(--neutral-Very-pale-orange);
+  display: grid;
+  place-items: center;
+  margin-top: 4rem;
 }

@@ -1,0 +1,52 @@
+.container {
+    background-color: white;
+    width: 46rem;
+    height: 8.7rem;
+    display: flex;
+    flex-direction: column;
+    color: var(--neutral-Medium-brown);
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.8rem;
+    line-height: 2.3rem;
+
+    border-color: green;
+    border-top: 0.1rem solid #F8E9DD;
+    margin-bottom: 3.2rem;
+}
+
+.content {
+    margin-top: 3.2rem;
+}
+
+.monthly_total_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+#total_month {
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 4.8rem;
+    line-height: 6.2rem;
+    color: black;
+}
+
+#percent_change {
+    color: black;
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.8rem;
+    line-height: 2.3rem;
+    text-align: right;
+}
+
+.percent_container {
+    display: flex;
+    flex-direction: column;
+}

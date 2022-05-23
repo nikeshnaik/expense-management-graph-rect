@@ -1,0 +1,15 @@
+.container {
+    width: inherit;
+    height: 17.8rem;
+    margin-bottom: 3.2rem;
+}
+
+#graph_title {
+    display: flex;
+    justify-content: left;
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 3.2rem;
+    line-height: 4.2rem;
+}

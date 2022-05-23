@@ -1,0 +1,30 @@
+.container {
+    background-color: var(--primary-Soft-red);
+    border-radius: 2rem;
+    width: 54rem;
+    height: 12.5rem;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 3.2rem;
+}
+
+.balance {
+    color: white;
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.8rem;
+    line-height: 2.3rem;
+}
+
+.balance>#balance_number {
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 3.2rem;
+    line-height: 4.2rem;
+}
