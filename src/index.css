@@ -1,13 +1,25 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+:root {
+
+  --primary-Soft-red: hsl(10, 79%, 65%);
+  --primary-Cyan: hsl(186, 34%, 60%);
+
+  --neutral-Dark-brown: hsl(25, 47%, 15%);
+  --neutral-Medium-brown: hsl(28, 10%, 53%);
+  --neutral-Cream: -hsl(27, 66%, 92%);
+  --neutral-Very-pale-orange: hsl(33, 100%, 98%);
+}
+
+
+html {
+  font-size: 62.5%;
+  font-family: 'DM Sans', sans-serif;
+  background-color: var(--neutral-Very-pale-orange);
 }
