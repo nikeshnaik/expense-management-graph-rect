@@ -1,5 +1,7 @@
 # Frontend Mentor - Expenses chart component
 
+[Deployed Site --> https://tiny-pony-4175e3.netlify.app/](https://tiny-pony-4175e3.netlify.app/)
+
 ![Design preview for the Expenses chart component coding challenge](./design/desktop-preview.jpg)
 
 ## Welcome! 👋
