@@ -12,7 +12,7 @@ function BarChart(props) {
 
     useEffect(() => {
 
-        setTimeout(10000)
+        console.log("I am being called after useffect")
         const canvas = ref.current.getContext('2d')
         canvas.clearRect(0, 0, window.innerWidth, window.innerHeight)
         canvas.scale(dpr, dpr);
