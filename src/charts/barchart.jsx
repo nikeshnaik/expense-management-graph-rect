@@ -4,14 +4,15 @@ function BarChart(props) {
 
     const ref = useRef()
 
-    var data = props.data
+    var data = [...props.data]
+
     const barColor = "#EC755D"
     const maxValueBarColor = "#76B5BC"
     let dpr = window.devicePixelRatio * 1.5
-    console.log("dpr calculation", dpr)
 
     useEffect(() => {
 
+        setTimeout(10000)
         const canvas = ref.current.getContext('2d')
         canvas.scale(dpr, dpr);
         var canvas_height = 178 * dpr
@@ -20,14 +21,14 @@ function BarChart(props) {
         var maxValue = 0
         maxValue = Math.max(...data.map(item => item.amount))
 
-        canvas.clearRect(0, 0, 460, 178)
+        canvas.clearRect(0, 0, 460, canvas_height)
 
         data.forEach(element => {
             drawBar(canvas, offset, canvas_height - (element.amount * 1.5) - 170, width, (element.amount * 1.5), maxValue === element.amount)
             fillTextBelowBar(canvas, offset + 7, canvas_height - 150, element.day)
             offset = offset + width + 13
         });
-    }, [data, dpr])
+    })
 
 
     function drawBar(canvas, posX, posY, width, height, isItMaxValue) {
