@@ -1,6 +1,6 @@
 .container {
     width: inherit;
-    height: 17.8rem;
+    height: fit-content;
     cursor: pointer;
 }
 

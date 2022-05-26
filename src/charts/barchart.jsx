@@ -20,6 +20,7 @@ function BarChart(props) {
         maxValue = Math.max(...data.map(item => item.amount))
 
         canvas.clearRect(0, 0, 480, 178)
+
         data.forEach(element => {
             drawBar(canvas, offset, canvas_height - (element.amount * 1.5) - 100, width, (element.amount * 1.5), maxValue === element.amount)
             fillTextBelowBar(canvas, offset + 7, canvas_height - 85, element.day)
@@ -44,8 +45,7 @@ function BarChart(props) {
 
     const handleHover = (event) => {
 
-        console.log(event.clientX, event.clientY, event.target)
-
+        // console.log(event.clientX, event.clientY, event.target)
         event.stopPropagation()
 
     }
