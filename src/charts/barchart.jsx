@@ -8,6 +8,7 @@ function BarChart(props) {
     const barColor = "#EC755D"
     const maxValueBarColor = "#76B5BC"
     let dpr = window.devicePixelRatio * 1.5
+    console.log("dpr calculation", dpr)
 
     useEffect(() => {
 
@@ -19,7 +20,7 @@ function BarChart(props) {
         var maxValue = 0
         maxValue = Math.max(...data.map(item => item.amount))
 
-        canvas.clearRect(0, 0, 480, 178)
+        canvas.clearRect(0, 0, 460, 178)
 
         data.forEach(element => {
             drawBar(canvas, offset, canvas_height - (element.amount * 1.5) - 100, width, (element.amount * 1.5), maxValue === element.amount)
