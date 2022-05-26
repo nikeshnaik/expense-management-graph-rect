@@ -1,6 +1,7 @@
 .container {
     width: inherit;
     height: 17.8rem;
+    cursor: pointer;
 }
 
 #graph_title {

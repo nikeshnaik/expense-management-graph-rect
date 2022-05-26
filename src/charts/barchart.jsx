@@ -10,22 +10,22 @@ function BarChart(props) {
     let dpr = window.devicePixelRatio * 1.5
 
     useEffect(() => {
+
         const canvas = ref.current.getContext('2d')
         canvas.scale(dpr, dpr);
         var canvas_height = 178
         var offset = 3
         var width = 30.92
-        var baseline = 90
         var maxValue = 0
         maxValue = Math.max(...data.map(item => item.amount))
 
-
+        canvas.clearRect(0, 0, 480, 178)
         data.forEach(element => {
             drawBar(canvas, offset, canvas_height - (element.amount * 1.5) - 100, width, (element.amount * 1.5), maxValue === element.amount)
             fillTextBelowBar(canvas, offset + 7, canvas_height - 85, element.day)
             offset = offset + width + 13
         });
-    }, [true])
+    }, [data, dpr])
 
 
     function drawBar(canvas, posX, posY, width, height, isItMaxValue) {
@@ -33,8 +33,6 @@ function BarChart(props) {
         canvas.lineWidth = 0.0001
         canvas.fillStyle = isItMaxValue ? maxValueBarColor : barColor
         canvas.fillRect(posX, posY, width, height)
-
-
     }
 
     function fillTextBelowBar(canvas, posX, posY, textValue) {
@@ -43,7 +41,17 @@ function BarChart(props) {
         canvas.fillText(textValue, posX, posY);
     }
 
-    return <canvas ref={ref} width={460 * dpr} height={178 * dpr} style={{ width: "460px", height: "178px" }} />
+
+    const handleHover = (event) => {
+
+        console.log(event.clientX, event.clientY, event.target)
+
+        event.stopPropagation()
+
+    }
+
+
+    return <canvas onMouseMove={handleHover} ref={ref} width={460 * dpr} height={178 * dpr} style={{ width: "460px", height: "178px" }} />
 }
 
 
