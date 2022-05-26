@@ -14,6 +14,7 @@ function BarChart(props) {
 
         setTimeout(10000)
         const canvas = ref.current.getContext('2d')
+        canvas.clearRect(0, 0, window.innerWidth, window.innerHeight)
         canvas.scale(dpr, dpr);
         var canvas_height = 178 * dpr
         var offset = 3
@@ -21,14 +22,13 @@ function BarChart(props) {
         var maxValue = 0
         maxValue = Math.max(...data.map(item => item.amount))
 
-        canvas.clearRect(0, 0, 460, canvas_height)
 
         data.forEach(element => {
             drawBar(canvas, offset, canvas_height - (element.amount * 1.5) - 170, width, (element.amount * 1.5), maxValue === element.amount)
             fillTextBelowBar(canvas, offset + 7, canvas_height - 150, element.day)
             offset = offset + width + 13
         });
-    })
+    }, [dpr, data])
 
 
     function drawBar(canvas, posX, posY, width, height, isItMaxValue) {
@@ -53,7 +53,7 @@ function BarChart(props) {
     }
 
 
-    return <canvas onMouseMove={handleHover} ref={ref} width={460 * dpr} height={178 * dpr} style={{ width: "460px", height: "178px" }} />
+    return <canvas onMouseMove={handleHover} ref={ref} width={460 * dpr} height={178 * dpr} style={{ width: "46rem", height: "17.8rem" }} />
 }
 
 
