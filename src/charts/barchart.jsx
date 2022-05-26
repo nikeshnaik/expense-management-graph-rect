@@ -14,7 +14,7 @@ function BarChart(props) {
 
         const canvas = ref.current.getContext('2d')
         canvas.scale(dpr, dpr);
-        var canvas_height = 178
+        var canvas_height = 178 * dpr
         var offset = 3
         var width = 30.92
         var maxValue = 0
@@ -23,8 +23,8 @@ function BarChart(props) {
         canvas.clearRect(0, 0, 460, 178)
 
         data.forEach(element => {
-            drawBar(canvas, offset, canvas_height - (element.amount * 1.5) - 100, width, (element.amount * 1.5), maxValue === element.amount)
-            fillTextBelowBar(canvas, offset + 7, canvas_height - 85, element.day)
+            drawBar(canvas, offset, canvas_height - (element.amount * 1.5) - 170, width, (element.amount * 1.5), maxValue === element.amount)
+            fillTextBelowBar(canvas, offset + 7, canvas_height - 150, element.day)
             offset = offset + width + 13
         });
     }, [data, dpr])
