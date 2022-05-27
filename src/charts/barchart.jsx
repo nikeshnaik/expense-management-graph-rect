@@ -4,7 +4,6 @@ function BarChart(props) {
 
     const ref = useRef()
 
-
     const barColor = "#EC755D"
     const maxValueBarColor = "#76B5BC"
     let dpr = window.devicePixelRatio * 1.5
@@ -13,7 +12,6 @@ function BarChart(props) {
 
         var data = [...props.data]
         var canvas = ref.current.getContext('2d')
-        canvas.clearRect(0, 0, window.innerWidth, window.innerHeight)
         canvas.scale(dpr, dpr);
         var canvas_height = 178 * dpr
         var offset = 3
