@@ -1,10 +1,11 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { Stage, Layer, Rect, Text, Label, Tag } from 'react-konva';
 
 function BarChart(props) {
 
 
     const [showToolTip, setShowToolTip] = useState(new Array(6).fill(false))
+    const [opacity, setOpacity] = useState(new Array(6).fill(1))
 
     const [dimension, setDimension] = useState({ width: 460, height: 220 })
 
@@ -15,12 +16,16 @@ function BarChart(props) {
     var offset = 3
     var width = 50.6
     var height = dimension.height
-    var dataScale = 2.5
+    var dataScale = 3
 
 
     const handleMouserOver = (id, event) => {
         let newState = new Array(6).fill(false)
         newState[id] = true
+
+        let newOpacatiyLevel = new Array(6).fill(1)
+        newOpacatiyLevel[id] = 0.5
+        setOpacity(newOpacatiyLevel)
         setShowToolTip(newState)
     }
 
@@ -47,6 +52,7 @@ function BarChart(props) {
                                 y={height - 25 - (item.amount * dataScale)}
                                 width={width}
                                 height={item.amount * dataScale}
+                                opacity={opacity[item.id]}
                                 fill={barColor}
                                 cornerRadius={5} onMouseOver={(event) => handleMouserOver(item.id, event)}
                             />
