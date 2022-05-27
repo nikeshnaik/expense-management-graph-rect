@@ -4,7 +4,6 @@ function BarChart(props) {
 
     const ref = useRef()
 
-    var data = [...props.data]
 
     const barColor = "#EC755D"
     const maxValueBarColor = "#76B5BC"
@@ -12,8 +11,8 @@ function BarChart(props) {
 
     useEffect(() => {
 
-        console.log("I am being called after useffect")
-        const canvas = ref.current.getContext('2d')
+        var data = [...props.data]
+        var canvas = ref.current.getContext('2d')
         canvas.clearRect(0, 0, window.innerWidth, window.innerHeight)
         canvas.scale(dpr, dpr);
         var canvas_height = 178 * dpr
@@ -28,7 +27,7 @@ function BarChart(props) {
             fillTextBelowBar(canvas, offset + 7, canvas_height - 150, element.day)
             offset = offset + width + 13
         });
-    }, [dpr, data])
+    }, [dpr, props.data])
 
 
     function drawBar(canvas, posX, posY, width, height, isItMaxValue) {
