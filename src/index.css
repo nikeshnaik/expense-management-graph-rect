@@ -32,3 +32,10 @@ canvas {
   image-rendering: crisp-edges;
   text-rendering: auto;
 }
+
+
+@media only screen and (max-width: 375px) {
+  html {
+    font-size: 40%;
+  }
+}
