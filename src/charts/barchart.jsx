@@ -5,6 +5,7 @@ function BarChart(props) {
 
 
     const [showToolTip, setShowToolTip] = useState(new Array(6).fill(false))
+    const [isHover, setIsHover] = useState(false)
     const [opacity, setOpacity] = useState(new Array(6).fill(1))
 
     const [dimension, setDimension] = useState({ width: 460, height: 220 })
@@ -26,6 +27,7 @@ function BarChart(props) {
         let newOpacatiyLevel = new Array(6).fill(1)
         newOpacatiyLevel[id] = 0.5
         setOpacity(newOpacatiyLevel)
+        setIsHover(true)
         setShowToolTip(newState)
     }
 
@@ -36,8 +38,8 @@ function BarChart(props) {
 
 
     return (
-        <Stage width={dimension.width} height={height} >
-            <Layer>
+        <Stage width={dimension.width} height={height} onMouseLeave={() => setIsHover(false)} >
+            <Layer  >
                 {
                     props.data.map((item) => {
                         if (item.amount === maxValue) {
@@ -52,9 +54,10 @@ function BarChart(props) {
                                 y={height - 25 - (item.amount * dataScale)}
                                 width={width}
                                 height={item.amount * dataScale}
-                                opacity={opacity[item.id]}
+                                opacity={isHover ? opacity[item.id] : 1}
                                 fill={barColor}
                                 cornerRadius={5} onMouseOver={(event) => handleMouserOver(item.id, event)}
+
                             />
                             <Text
                                 x={offset + 12}
@@ -65,7 +68,7 @@ function BarChart(props) {
                                 fontFamily={"DM Sans"}
                                 lineHeight={19.53}
                             />
-                            {showToolTip[item.id] ?
+                            {showToolTip[item.id] && isHover ?
                                 <Label x={offset + 2} y={height - 55 - item.amount * dataScale}>
                                     <Tag cornerRadius={5} fill="black" />
                                     <Text x={offset + 2} y={height - 55 - item.amount * dataScale} padding={6} text={'$' + item.amount} fill={'white'} fontSize={12} fontFamily={"DM Sans"} />
