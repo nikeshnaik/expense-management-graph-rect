@@ -1,5 +1,5 @@
 .container {
-    background-color: white;
+    background-color: var(--neutral-Very-pale-orange);
     padding: 3.2rem 3.2rem 4rem 4rem;
     color: black;
     width: inherit;

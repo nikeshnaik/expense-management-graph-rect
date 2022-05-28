@@ -1,5 +1,5 @@
 .container {
-    background-color: white;
+    background-color: var(--neutral-Very-pale-orange);
     width: 46rem;
     height: 8.7rem;
     display: flex;

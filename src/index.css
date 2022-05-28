@@ -19,10 +19,10 @@
 html {
   font-size: 62.5%;
   font-family: 'DM Sans', sans-serif;
-  background-color: var(--neutral-Very-pale-orange);
+  background-color: var(--neutral-Cream);
   display: grid;
   place-items: center;
-  margin-top: 4rem;
+  margin-top: 12rem;
 }
 
 canvas {
